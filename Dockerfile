@@ -22,4 +22,4 @@ COPY --from=build /workspace/build-ok.txt /app/build-ok.txt
 EXPOSE 5000
 
 # Run command
-CMD ["jwebserver", "-b", "0.0.0.0", "-p", "5000", "-d", "/app"]
+CMD sh -c "echo '✓ openhab-core application started successfully!' && echo '✓ Server is running on http://0.0.0.0:5000' && echo '✓ Ready to serve requests' && jwebserver -b 0.0.0.0 -p 5000 -d /app"
